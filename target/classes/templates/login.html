@@ -1,122 +1,146 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login de Administrador</title>
+    <title>Login de Usuario - Venta de Motos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
+            background-color: #f8f9fa;
             display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
         }
         .container {
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             display: flex;
-            width: 100%;
+            overflow: hidden;
         }
-        .image-section {
+        .left {
+            background: url('			https://www.carlsen.de/sites/default/files/serie/cover/motomania.jpg') no-repeat center center/cover;
             flex: 1;
-            background: url('/img/bli-min.jpg') no-repeat center center;
-            background-size: cover;
-            position: relative;
-        }
-        .image-section::after {
-            content: 'Imagen de freepik';
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            color: white;
-            font-size: 12px;
-        }
-        .form-section {
-            flex: 0.5;
+            color: #fff;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            background: white;
-            position: relative;
-            padding-top: 20px;
             text-align: center;
+            padding: 30px;
+			max-height: 400px;
+			margin-top: 40px;
         }
-        .form-container {
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-        }
-        .form-container img.logo {
-            width: 150px;
+        .left img {
+            max-width: 100px;
             margin-bottom: 20px;
         }
-        .form-container h1 {
-            text-align: center;
-            color: #b10000;
+        .left h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
-        .form-container form {
+        .left p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+			margin-top: 300px;
+        }
+        .social-icons a img {
+            width: 40px;
+            height: 40px;
+        }
+        .right {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .back-link {
+            margin-bottom: 20px;
+        }
+        .back-link a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .back-link a:hover {
+            text-decoration: underline;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        form {
             display: flex;
             flex-direction: column;
         }
-        .form-container label {
-            margin-top: 10px;
-        }
-        .form-container input {
+        form input {
+            margin-bottom: 15px;
             padding: 10px;
-            margin-top: 5px;
             border: 1px solid #ccc;
-            border-radius: 5px;
+            border-radius: 4px;
         }
-        .form-container button {
-            margin-top: 20px;
+        form button {
             padding: 10px;
-            background-color: #b10000;
-            color: white;
+            background-color: #007bff;
+            color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
-        .form-container button:hover {
-            background-color: #104E8B;
+        form button:hover {
+            background-color: #0056b3;
         }
-        .form-container p {
-            margin-top: 10px;
-            text-align: center;
-            color: red;
+        .register-link {
+            margin-top: 20px;
         }
-        .form-container .forgot-password {
-            text-align: right;
-            color: #1E90FF;
+        .register-link a {
+            color: #007bff;
             text-decoration: none;
         }
-        .form-container .register {
-            text-align: center;
-            color: #1E90FF;
-        }
-        .back-link {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            color: #b10000;
-            text-decoration: none;
+        .register-link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="image-section"></div>
-        <div class="form-section">
-            <a th:href="@{/}" class="back-link">← Volver</a>
-            <div class="form-container">
-                <img th:src="@{/img/111.png}" alt="Logo de la empresa" class="logo">
-                <h1 >Inicia sesión</h1>
-                <form th:action="@{/admin/login}" method="post">
-                    <label for="username">Usuario:</label>
-                    <input type="text" id="username" name="username" required>
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
-                    <button type="submit" >Inicia sesión</button>
-                    <p th:text="${error}" style="color: red"></p>
-                </form>
+        <div class="left">
+            
+            <div class="social-icons">
+				<a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
+                </a>
+				<a class="nav-link" href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
+                </a>
+				<a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </a>
             </div>
         </div>
+        <div class="right">
+            <div class="back-link">
+                <a th:href="@{/}">← Volver</a>
+            </div>
+            <h1>Inicia sesión ADMIN</h1>
+            <form action="/admin/login" method="post">
+                <label for="username">Usuario:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Inicia sesión</button>
+            </form>
+           
+        </div>
     </div>
+    <!-- JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

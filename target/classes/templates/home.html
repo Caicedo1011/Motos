@@ -2,481 +2,61 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
+    <title>Inicio | Venta de Motos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
         .navbar-social {
-            background-color: #7f0000;
-            color: white;
-            padding: 5px 0;
-            display: flex;
-            align-items: center;
+            background-color: #333;
+            padding: 0.5rem 1rem;
         }
-        .navbar-social a {
-            color: white;
-            margin-right: 5px;
-            font-size: 14px;
-        }
-        .navbar-social .navbar-nav {
-            display: flex;
-            align-items: center;
+        .navbar-social .nav-link {
+            color: #fff;
         }
         .navbar-main {
-            background-color: #b10000;
-            color: white;
+            background-color: #555;
         }
-        .navbar-main .navbar-nav .nav-link {
-            color: white;
-            margin-right: 10px;
+        .navbar-main .nav-link {
+            color: #fff;
         }
-        .navbar-main .navbar-brand img {
-            height: 40px;
+        .header-section {
+            background: url('https://www.gaming.net/wp-content/uploads/2023/04/ss_1f10211e44b6e8a72f7a44892471207f88030b89.1920x1080.jpg') no-repeat center center/cover;
+            height: 75vh;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        .search-bar input {
-            max-width: 200px;
+        .header-section h1 {
+            font-size: 3rem;
         }
-        .search-bar button {
-            background-color: #fff;
-            border: none;
-            color: #000;
+        .header-section p {
+            font-size: 1.5rem;
         }
-        .cart-icon {
-            color: white;
+        .carousel-item img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
         }
-        .navbar-main .navbar-nav .nav-item {
-            margin-right: 0.5rem;
+        .card {
+            margin: 1rem 0;
         }
-        .navbar-main .navbar-nav .nav-link {
-            padding-right: 0.5rem;
+        .card-img-top {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
         }
-        .search-bar {
-            max-width: 300px;
+        .footer {
+            background-color: #555;
+            color: #fff;
+            padding: 1rem 0;
+            text-align: center;
         }
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'open sans';
-}
-
-.contenedor {
-    padding: 60px 0;
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.titulo {
-    color: #c70000;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-/* Header */
-
-header {
-    width: 100%;
-    height: 600px;
-    background: #000000; /* Cambia el color de fondo a negro (#000000) */
-    background: -webkit-linear-gradient(to right, hsla(0, 0%, 0%, 0.459), hsla(0, 0%, 0%, 0.664)), url(../img/uno-min.jpg);
-    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.459), hsla(0, 0%, 0%, 0.664)), url(../img/uno-min.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-
-
-nav{
-    text-align: right;
-    padding: 30px 50px 0 0;
-}
-
-nav > a{
-    color:#fff;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-nav > a:hover{
-    text-decoration: underline;
-}
-
-header .textos-header{
-    display: flex;
-    height: 430px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.textos-header h1{
-    font-size: 50px;
-    color:#fff;
-}
-
-.textos-header h2{
-    font-size: 30px;
-    font-weight: 300;
-    color:#fff;
-}
-
-.wave{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-/* About us */
-
-main .sobre-nosotros{
-    padding: 30px 0 60px 0;
-}
-.contenedor-sobre-nosotros{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.imagen-about-us{
-    width: 48%;
-}
-
-.sobre-nosotros .contenido-textos{
-    width: 48%;
-}
-
-.contenido-textos h3{
-    margin-bottom: 15px;
-}
-
-.contenido-textos h3 span{
-    background: #c70000;
-    color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    padding: 2px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    margin-right: 5px;
-}
-
-.contenido-textos p{
-    padding: 0px 0px 30px 15px;
-    font-weight: 300;
-    text-align: justify;
-}
-
-/* Galeria */
-
-
-.portafolio{
-    background: #f2f2f2;
-}
-
-.galeria-port{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.imagen-port{
-    width: 24%;
-    margin-bottom: 10px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-}
-
-.imagen-port > img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hover-galeria{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    transform: scale(0);
-    background: hsla(273,91%,27%, 0.7);
-    transition: transform .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.hover-galeria img{
-    width: 50px;
-}
-
-.hover-galeria p{
-    color: #fff;
-}
-
-.imagen-port:hover .hover-galeria{
-    transform: scale(1);
-}
-
-/* Clients */
-
-.cards{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.cards .card{
-    background: #c70000;
-    display: flex;
-    width: 46%;
-    height: 200px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
-}
-
-.cards .card img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    display: block;
-}
-
-.cards .card > .contenido-texto-card{
-    width: 60%;
-    color: #fff;
-}
-
-.cards .card > .contenido-texto-card p{
-    font-weight: 300;
-    padding-top: 5px;
-}
-
-/*  Our team */
-
-.about-services{
-    background: #f2f2f2;
-    padding-bottom: 30px;
-}
-
-
-.servicio-cont{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.servicio-ind{
-    width: 28%;
-    text-align: center;
-}
-
-.servicio-ind img{
-    width: 90%;
-}
-
-.servicio-ind h3{
-    margin: 10px 0;
-}
-
-.servicio-ind p{
-    font-weight: 300;
-    text-align: justify;
-}
-
-/* footer */
-
-footer{
-    background: #414141;
-    padding: 60px 0 30px 0;
-    margin: auto;
-    overflow: hidden;
-}
-
-.contenedor-footer{
-    display: flex;
-    width: 90%;
-    justify-content: space-evenly;
-    margin: auto;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #ccc;
-}
-
-.content-foo{
-    text-align: center;
-}
-
-.content-foo h4{
-    color: #fff;
-    border-bottom: 3px solid #af20d3;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.content-foo p{
-    color: #ccc;
-}
-
-.titulo-final{
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0 0 0;
-    color: #9e9797;
-}
-
-@media screen and (max-width:900px){
-    header{
-        background-position: center;
-    }
-
-    .contenedor-sobre-nosotros{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sobre-nosotros .contenido-textos{
-        width: 90%;
-    }
-
-    .imagen-about-us{
-        width: 90%;
-    }
-
-    /* Galeria */
-
-    .imagen-port{
-        width: 44%;
-    }
-
-    /* Clientes */
-
-    .cards{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cards .card{
-        width: 90%;
-    }
-
-    .cards .card:first-child{
-        margin-bottom: 30px;
-    }
-
-    /* servicios */
-
-    .servicio-cont{
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .servicio-ind{
-        width: 100%;
-        text-align: center;
-    }
-
-    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
-        margin-bottom: 60px;
-    }
-
-    .servicio-ind img{
-        width: 90%;
-    }
-}
-
-@media screen and (max-width:500px){
-    nav{
-        text-align: center;
-        padding: 30px 0 0 0;
-    }
-
-    nav > a{
-        margin-right: 5px;
-    }
-
-    .textos-header h1{
-        font-size: 35px;
-    }
-
-    .textos-header h2{
-        font-size: 20px;
-    }
-
-    /* ABOUT US */
-
-    .imagen-about-us{
-        margin-bottom: 60px;
-        width: 99%;
-    }
-
-    .sobre-nosotros .contenido-textos{
-        width: 95%;
-    }
-
-    /* Galeria */
-
-    .imagen-port{
-        width: 95%;
-    }
-
-    /* Clients */
-
-    .cards .card{
-        height: 450px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .cards .card img{
-        width: 90px;
-        height: 90px;
-    }
-
-    /* Footer */
-
-    .contenedor-footer{
-        flex-direction: column;
-        border: none;
-    }
-
-    .content-foo{
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .content-foo h4{
-        border: none;
-    }
-
-    .content-foo p{
-        color: #ccc;
-        border-bottom: 1px solid #f2f2f2;
-        padding-bottom: 20px;
-    }
-
-    .titulo-final{
-        font-size: 20px;
-    }
-}
     </style>
 </head>
 <body>
@@ -495,8 +75,8 @@ footer{
                         <i class="fas fa-user"></i> Mi cuenta
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="accountDropdown">
-                        <a class="dropdown-item" style="color :black;" th:href="@{/login}">Login Usuario</a>
-                        <a class="dropdown-item" style="color :black;" th:href="@{/admin/login}">Login Administrador</a>
+                        <a class="dropdown-item" style="color: black;" th:href="@{/login}">Login Usuario</a>
+                        <a class="dropdown-item" style="color: black;" th:href="@{/admin/login}">Login Administrador</a>
                     </div>
                 </div>
             </div>
@@ -506,150 +86,100 @@ footer{
     <!-- Main Menu -->
     <nav class="navbar navbar-expand-lg navbar-main">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/icon94.png" alt="Logo"></a>
+            <a class="navbar-brand" href="#"><img src="" alt=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">LIBROS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">PRESTAMOS</a>
-                    </li>
-                    
-                    <form class="form-inline my-2 my-lg-0 search-bar ml-2">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
-                </ul>
-            </div>
+           
         </div>
     </nav>
-  <header>
- 		<section class="textos-header">
-            <h1>Explora un mundo de conocimiento</h1>
-			<h2>Con nuestra biblioteca virtual</h2>
-        </section>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                    style="stroke: none; fill: #fff;"></path>
-            </svg></div>
+   <!-- Header Section -->
+    <header class="header-section">
+        <h1>Bienvenido a Moto Mania</h1>
+        <p>Las mejores motos al mejor precio</p>
+        <a href="#" class="btn btn-primary btn-lg"> </a>
     </header>
-    <main>
-        <section class="contenedor sobre-nosotros">
-            <h2 class="titulo">Explora nuestro catálogo</h2>
-            <div class="contenedor-sobre-nosotros">
-                <img src="img/ilustracion2.svg" alt="" class="imagen-about-us">
-                <div class="contenido-textos">
-                    <h3><span>1</span>Amplia variedad de libros</h3>
-                    <p>Descubre una selección cuidadosamente curada de libros que abarcan todos los géneros y temas,
-                proporcionando recursos valiosos para todos los intereses y edades.</p>
-                    <h3><span>2</span>Recursos educativos</h3>
-            <p>Accede a recursos educativos de calidad que ayudan en el aprendizaje y en la investigación,
-                proporcionando herramientas esenciales para el desarrollo académico y profesional.</p>
-        </div>
-            </div>
-        </section>
-        <section class="portafolio">
-            <div class="contenedor">
-                <h2 class="titulo">Explora nuestro catalogo</h2>
-                <div class="galeria-port">
-                    <div class="imagen-port">
-                        <img src="./img/1.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/2.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/1.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/2.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    
+
+    <!-- Carousel Section -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="				https://cdn.shopify.com/s/files/1/0608/7819/2888/files/kawasaki-ninja-2023.jpg?v=1674124860" class="d-block w-100" alt="Moto Deportiva">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Moto Deportiva</h5>
+                    <p>Velocidad y estilo en una sola moto.</p>
                 </div>
             </div>
-        </section>
-        <section class="clientes contenedor">
-            <h2 class="titulo">Que dicen nuestros clientes</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="img/face1.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Juana</h4>
-                        <p>La biblioteca virtual es increíble.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/face2.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Karla</h4>
-                        <p>Me encanta la biblioteca virtual, siempre encuentro lo que busco</p>
-                    </div>
+            <div class="carousel-item">
+                <img src="				https://images.unsplash.com/photo-1601922935980-1f7bfa1e8c55?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="Moto Urbana">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Moto Urbana</h5>
+                    <p>Perfecta para la ciudad.</p>
                 </div>
             </div>
-        </section>
-        <section class="about-services">
-            <div class="contenedor">
-                <h2 class="titulo">Nuestros servicios</h2>
-                <div class="servicio-cont">
-                    <div class="servicio-ind">
-                <img src="img/ilustracion1.svg" alt="">
-                <h3>Acceso a libros digitales</h3>
-                <p>Explora nuestra amplia colección de libros digitales y accede a ellos desde cualquier lugar y en cualquier momento.</p>
-            </div>
-            <div class="servicio-ind">
-                <img src="img/ilustracion4.svg" alt="">
-                <h3>Buscador avanzado</h3>
-                <p>Utiliza nuestro buscador avanzado para encontrar rápidamente los libros que te interesan por autor, título o tema.</p>
-            </div>
-            <div class="servicio-ind">
-                <img src="img/ilustracion3.svg" alt="">
-                <h3>Lectura sin conexión</h3>
-                <p>Descarga libros para leer sin conexión a internet y disfruta de la lectura en cualquier momento, incluso sin conexión.</p>
-            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=900&ixid=MnwxfDB8MXxyYW5kb218MHx8bW90b3JjeWNsZSxhZHZlbnR1cmV8fHx8fHwxNzE2NDgzNTUz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1600" class="d-block w-100" alt="Moto de Aventura">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Moto de Aventura</h5>
+                    <p>Listo para cualquier terreno.</p>
                 </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>Celular</h4>
-                <p>8296312</p>
-            </div>
-            <div class="content-foo">
-                <h4>Correo</h4>
-                <p>8296312</p>
-            </div>
-            <div class="content-foo">
-                <h4>Correo</h4>
-                <p>8296312</p>
             </div>
         </div>
-        <h2 class="titulo-final">&copy; Camilo | Omar</h2>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Siguiente</span>
+        </a>
+    </div>
+
+    <!-- Featured Motos Section -->
+    <section class="container my-5">
+        <h2 class="text-center mb-4">Motos Destacadas</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://motordigitalpress.com/wp-content/uploads/2022/12/moto-clasica.jpg" class="card-img-top" alt="Moto Clásica">
+                    <div class="card-body">
+                        <h5 class="card-title">Moto Clásica</h5>
+                        <p class="card-text">Elegancia y tradición.</p>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="	https://publimotos.com/wp-content/uploads/2023/09/suzuki-electrica-02.jpg" class="card-img-top" alt="Moto Eléctrica">
+                    <div class="card-body">
+                        <h5 class="card-title">Moto Eléctrica</h5>
+                        <p class="card-text">Innovación y ecología.</p>
+                     
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="https://www.deceroacien.com.mx/u/fotografias/m/2023/7/25/f960x540-24157_98232_5050.jpg" class="card-img-top" alt="Moto Deportiva">
+                    <div class="card-body">
+                        <h5 class="card-title">Moto Deportiva</h5>
+                        <p class="card-text">Personaliza tu experiencia.</p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Venta de Motos. Todos los derechos reservados.</p>
     </footer>
 
     <!-- JS and dependencies -->

@@ -4,12 +4,10 @@
     <title>Crear Administrador</title>
     <style>
         body {
-            background: url('https://img.freepik.com/foto-gratis/fondo-abstracto-lineas-rojas_1361-3531.jpg?t=st=1716132561~exp=1716136161~hmac=1e26136435dcad8642b97f97efbdb812a6372a32d329c3aec5ab0c0eddab3bae&w=740') no-repeat center center;
+            background: url('https://www.motorcycle.com/images/content/2020-BMW-S1000RR-Review/16-2020-BMW-S1000RR-Review.jpg') no-repeat center center;
             background-size: cover;
-            font-family: Arial, sans-serif;
-            background-color: #e0e7ff;
-            margin: 20px 0;
-            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -17,22 +15,22 @@
         }
 
         .form-container {
-            background: white;
-            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 400px;
             text-align: center;
-            position: relative;
         }
 
         .form-header {
-            background: url('https://img.freepik.com/vector-gratis/fondo-abstracto-grunge-amarillo-brillante_1055-8116.jpg?t=st=1716131623~exp=1716135223~hmac=513966602c830d7b6cc29eeb9397e0ae95aa56fd3e9f0e6fd34a6ad3a41391ef&w=740') no-repeat center center;
-            background-size: cover;
+            background: url('https://img.icons8.com/clouds/100/000000/motorcycle.png') no-repeat center center;
+            background-size: contain;
             height: 150px;
             border-top-left-radius: 12px;
             border-top-right-radius: 12px;
             position: relative;
+            margin-bottom: 20px;
         }
 
         .form-header img {
@@ -47,7 +45,7 @@
         }
 
         form {
-            margin-top: 50px;
+            margin-top: 30px;
         }
 
         label {
@@ -55,11 +53,13 @@
             text-align: left;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #333;
         }
 
         .form-group {
             display: flex;
             justify-content: space-between;
+            margin-bottom: 20px;
         }
 
         .form-group div {
@@ -69,7 +69,7 @@
         input[type="text"], input[type="password"], input[type="date"] {
             width: calc(100% - 22px);
             padding: 10px;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
         }
@@ -77,7 +77,7 @@
         button {
             width: 100%;
             padding: 10px;
-            background-color: #ff4b5c;
+            background-color: #333;
             color: white;
             border: none;
             border-radius: 4px;
@@ -86,7 +86,7 @@
         }
 
         button:hover {
-            background-color: #e03e4e;
+            background-color: #555;
         }
 
         a {
@@ -104,7 +104,7 @@
 <body>
     <div class="form-container">
         <div class="form-header">
-            <img src="https://img.freepik.com/vector-premium/icono-rojo_1076610-12407.jpg?w=740" alt="Profile Picture">
+            <!-- Imagen de motocicleta en lugar del ícono genérico -->
         </div>
         <form th:action="@{/admin/create}" th:object="${admin}" method="post">
             <div class="form-group">

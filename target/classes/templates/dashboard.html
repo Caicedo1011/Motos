@@ -1,658 +1,310 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Inicio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Venta de Motos</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
         .navbar-social {
-            background-color: #7f0000;
-            color: white;
-            padding: 5px 0;
-            display: flex;
-            align-items: center;
+            background-color: #343a40;
+            padding: 10px 0;
         }
-        .navbar-social a {
-            color: white;
-            margin-right: 5px;
-            font-size: 14px;
+
+        .navbar-social .nav-link {
+            color: #fff;
         }
-        .navbar-social .navbar-nav {
-            display: flex;
-            align-items: center;
-        }
+
         .navbar-main {
-            background-color: #b10000;
-            color: white;
+            background-color: #007bff;
+            padding: 15px 0;
         }
-        .navbar-main .navbar-nav .nav-link {
-            color: white;
+
+        .navbar-main .navbar-brand img {
+            max-height: 40px;
             margin-right: 10px;
         }
-        .navbar-main .navbar-brand img {
-            height: 40px;
+
+        .navbar-main .nav-link {
+            color: #fff;
+            margin-left: 15px;
         }
-        .search-bar input {
-            max-width: 200px;
-        }
-        .search-bar button {
-            background-color: #fff;
+
+        .cta-button {
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: #007bff;
             border: none;
-            color: #000;
+            border-radius: 5px;
+            color: #fff;
+            text-decoration: none;
         }
-        .cart-icon {
-            color: white;
+
+        .cta-button:hover {
+            background-color: #0056b3;
         }
-        .navbar-main .navbar-nav .nav-item {
-            margin-right: 0.5rem;
+
+        .moto-card {
+            margin-bottom: 30px;
         }
-        .navbar-main .navbar-nav .nav-link {
-            padding-right: 0.5rem;
+
+        .moto-card img {
+            max-height: 200px;
+            object-fit: cover;
         }
-        .search-bar {
-            max-width: 300px;
-        }
-        * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-body {
-    font-family: 'open sans';
-}
-
-.contenedor {
-    padding: 60px 0;
-    width: 90%;
-    max-width: 1000px;
-    margin: auto;
-    overflow: hidden;
-}
-
-.titulo {
-    color: #c70000;
-    font-size: 30px;
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-/* Header */
-
-header {
-    width: 100%;
-    height: 600px;
-    background: #000000; /* Cambia el color de fondo a negro (#000000) */
-    background: -webkit-linear-gradient(to right, hsla(0, 0%, 0%, 0.459), hsla(0, 0%, 0%, 0.664)), url(../img/uno-min.jpg);
-    background: linear-gradient(to right, hsla(0, 0%, 0%, 0.459), hsla(0, 0%, 0%, 0.664)), url(../img/uno-min.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    position: relative;
-}
-
-
-nav{
-    text-align: right;
-    padding: 30px 50px 0 0;
-}
-
-nav > a{
-    color:#fff;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
-}
-
-nav > a:hover{
-    text-decoration: underline;
-}
-
-header .textos-header{
-    display: flex;
-    height: 430px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-}
-
-.textos-header h1{
-    font-size: 50px;
-    color:#fff;
-}
-
-.textos-header h2{
-    font-size: 30px;
-    font-weight: 300;
-    color:#fff;
-}
-
-.wave{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
-
-/* About us */
-
-main .sobre-nosotros{
-    padding: 30px 0 60px 0;
-}
-.contenedor-sobre-nosotros{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.imagen-about-us{
-    width: 48%;
-}
-
-.sobre-nosotros .contenido-textos{
-    width: 48%;
-}
-
-.contenido-textos h3{
-    margin-bottom: 15px;
-}
-
-.contenido-textos h3 span{
-    background: #c70000;
-    color: #fff;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    width: 30px;
-    height: 30px;
-    padding: 2px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-    margin-right: 5px;
-}
-
-.contenido-textos p{
-    padding: 0px 0px 30px 15px;
-    font-weight: 300;
-    text-align: justify;
-}
-
-/* Galeria */
-
-
-.portafolio{
-    background: #f2f2f2;
-}
-
-.galeria-port{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.imagen-port{
-    width: 24%;
-    margin-bottom: 10px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
-}
-
-.imagen-port > img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-.hover-galeria{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    transform: scale(0);
-    background: hsla(273,91%,27%, 0.7);
-    transition: transform .5s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.hover-galeria img{
-    width: 50px;
-}
-
-.hover-galeria p{
-    color: #fff;
-}
-
-.imagen-port:hover .hover-galeria{
-    transform: scale(1);
-}
-
-/* Clients */
-
-.cards{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-.cards .card{
-    background: #c70000;
-    display: flex;
-    width: 46%;
-    height: 200px;
-    align-items: center;
-    justify-content: space-evenly;
-    border-radius: 5px;
-    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.6);
-}
-
-.cards .card img{
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 3px solid #fff;
-    border-radius: 50%;
-    display: block;
-}
-
-.cards .card > .contenido-texto-card{
-    width: 60%;
-    color: #fff;
-}
-
-.cards .card > .contenido-texto-card p{
-    font-weight: 300;
-    padding-top: 5px;
-}
-
-/*  Our team */
-
-.about-services{
-    background: #f2f2f2;
-    padding-bottom: 30px;
-}
-
-
-.servicio-cont{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.servicio-ind{
-    width: 28%;
-    text-align: center;
-}
-
-.servicio-ind img{
-    width: 90%;
-}
-
-.servicio-ind h3{
-    margin: 10px 0;
-}
-
-.servicio-ind p{
-    font-weight: 300;
-    text-align: justify;
-}
-
-/* footer */
-
-footer{
-    background: #414141;
-    padding: 60px 0 30px 0;
-    margin: auto;
-    overflow: hidden;
-}
-
-.contenedor-footer{
-    display: flex;
-    width: 90%;
-    justify-content: space-evenly;
-    margin: auto;
-    padding-bottom: 50px;
-    border-bottom: 1px solid #ccc;
-}
-
-.content-foo{
-    text-align: center;
-}
-
-.content-foo h4{
-    color: #fff;
-    border-bottom: 3px solid #af20d3;
-    padding-bottom: 5px;
-    margin-bottom: 10px;
-}
-
-.content-foo p{
-    color: #ccc;
-}
-
-.titulo-final{
-    text-align: center;
-    font-size: 24px;
-    margin: 20px 0 0 0;
-    color: #9e9797;
-}
-
-@media screen and (max-width:900px){
-    header{
-        background-position: center;
-    }
-
-    .contenedor-sobre-nosotros{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .sobre-nosotros .contenido-textos{
-        width: 90%;
-    }
-
-    .imagen-about-us{
-        width: 90%;
-    }
-
-    /* Galeria */
-
-    .imagen-port{
-        width: 44%;
-    }
-
-    /* Clientes */
-
-    .cards{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .cards .card{
-        width: 90%;
-    }
-
-    .cards .card:first-child{
-        margin-bottom: 30px;
-    }
-
-    /* servicios */
-
-    .servicio-cont{
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .servicio-ind{
-        width: 100%;
-        text-align: center;
-    }
-
-    .servicio-ind:nth-child(1), .servicio-ind:nth-child(2){
-        margin-bottom: 60px;
-    }
-
-    .servicio-ind img{
-        width: 90%;
-    }
-}
-
-@media screen and (max-width:500px){
-    nav{
-        text-align: center;
-        padding: 30px 0 0 0;
-    }
-
-    nav > a{
-        margin-right: 5px;
-    }
-
-    .textos-header h1{
-        font-size: 35px;
-    }
-
-    .textos-header h2{
-        font-size: 20px;
-    }
-
-    /* ABOUT US */
-
-    .imagen-about-us{
-        margin-bottom: 60px;
-        width: 99%;
-    }
-
-    .sobre-nosotros .contenido-textos{
-        width: 95%;
-    }
-
-    /* Galeria */
-
-    .imagen-port{
-        width: 95%;
-    }
-
-    /* Clients */
-
-    .cards .card{
-        height: 450px;
+		.footer {
+		            background-color: #555;
+		            color: #fff;
+		            padding: 1rem 0;
+		            text-align: center;
+		        }
+		        
+		/* Estilos para la sección de productos */
+		.products {
+  			display: flex;
+  			flex-wrap: wrap;
+  			justify-content: center;
+		}
+
+		/* Estilos para cada producto individual */
+		.product {
+  			background-color: #f5f5f5;
+  			border: 1px solid #ddd;
+  			border-radius: 5px;
+  			margin: 10px;
+  			padding: 15px;
+  			text-align: center;
+  			width: 300px; /* Ancho fijo para cada producto */
+  			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		.product img {
+  			max-width: 100%;
+  			height: auto;
+		}
+
+		.product h3 {
+  			font-size: 18px;
+  			margin-top: 10px;
+		}
+
+		.product p {
+  			font-size: 14px;
+  			margin-top: 10px;
+		}
+
+		.product a {
+  			color: #007bff;
+  			text-decoration: none;
+  			font-weight: bold;
+		}
+
+		.product a:hover {
+  			text-decoration: underline;
+		}
+		
+		.race-news {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
-
-    .cards .card img{
-        width: 90px;
-        height: 90px;
-    }
-
-    /* Footer */
-
-    .contenedor-footer{
-        flex-direction: column;
-        border: none;
-    }
-
-    .content-foo{
-        margin-bottom: 20px;
+    .news {
+        background-color: #4CAF50;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        padding: 20px;
         text-align: center;
+        width: 300px;
+        transition: transform 0.3s ease-in-out;
     }
-
-    .content-foo h4{
+    .news:hover {
+        transform: translateY(-10px);
+    }
+    .news img {
+        border-radius: 10px;
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        margin-bottom: 10px;
+    }
+    .news h3 {
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .news p {
+        color: white;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        font-size: 16px;
+        color: black;
+        background-color: white;
         border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: 'Roboto Slab', serif;
     }
-
-    .content-foo p{
-        color: #ccc;
-        border-bottom: 1px solid #f2f2f2;
-        padding-bottom: 20px;
+    .race-videos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
-
-    .titulo-final{
-        font-size: 20px;
+    .video-container, .gif-container {
+        background-color: #5DC8EB;
+        border-radius: 10px;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+        margin: 20px;
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+        transition: transform 0.3s ease-in-out;
     }
-}
+    .video-container:hover, .gif-container:hover {
+        transform: translateY(-10px);
+    }
+    .video-container video, .gif-container img {
+        border-radius: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
     </style>
 </head>
+
 <body>
+
     <!-- Social Menu -->
     <nav class="navbar navbar-expand-lg navbar-social">
-        <div class="container-fluid">
+        <div class="container">
             <div class="navbar-nav mr-auto">
                 <a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
                 <a class="nav-link" href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
                 <a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
             <div class="navbar-nav ml-auto">
-                <span>|</span>
-                <div class="dropdown">
-                    <!-- Dentro del dropdown en la barra de navegación -->
-<a class="nav-link" th:href="@{/}"><i class="fas fa-user"></i> Cerrar sesión</a>
-
-                   
-                </div>
-                </div>
+                <a class="nav-link" th:href="@{/}"><i class="fas fa-user"></i> Cerrar sesión</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Menu -->
     <nav class="navbar navbar-expand-lg navbar-main">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="./img/icon94.png" alt="Logo"></a>
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="https://www.carlsen.de/sites/default/files/serie/cover/motomania.jpg" alt="Logo">Venta de Motos</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarMain">
-                <ul class="navbar-nav ml-auto d-flex align-items-center">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">LIBROS</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">PRESTAMOS</a>
-                    </li>
+                <ul class="navbar-nav ml-auto">
                     
-                    <form class="form-inline my-2 my-lg-0 search-bar ml-2">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                        <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                    </form>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/libros/ver}">MOTOS</a>
+                    </li>
+				
+                    <li class="nav-item">
+                        <form class="form-inline my-2 my-lg-0 search-bar ml-2">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                            <button class="btn btn-light" type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-  <header>
- 		<section class="textos-header">
-            <h1>Explora un mundo de conocimiento</h1>
-			<h2>Con nuestra biblioteca virtual</h2>
-        </section>
-        <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
-                style="height: 100%; width: 100%;">
-                <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
-                    style="stroke: none; fill: #fff;"></path>
-            </svg></div>
-    </header>
-    <main>
-        <section class="contenedor sobre-nosotros">
-            <h2 class="titulo">Explora nuestro catálogo</h2>
-            <div class="contenedor-sobre-nosotros">
-                <img src="img/ilustracion2.svg" alt="" class="imagen-about-us">
-                <div class="contenido-textos">
-                    <h3><span>1</span>Amplia variedad de libros</h3>
-                    <p>Descubre una selección cuidadosamente curada de libros que abarcan todos los géneros y temas,
-                proporcionando recursos valiosos para todos los intereses y edades.</p>
-                    <h3><span>2</span>Recursos educativos</h3>
-            <p>Accede a recursos educativos de calidad que ayudan en el aprendizaje y en la investigación,
-                proporcionando herramientas esenciales para el desarrollo académico y profesional.</p>
-        </div>
-            </div>
-        </section>
-        <section class="portafolio">
-            <div class="contenedor">
-                <h2 class="titulo">Explora nuestro catalogo</h2>
-                <div class="galeria-port">
-                    <div class="imagen-port">
-                        <img src="./img/1.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/2.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/1.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    <div class="imagen-port">
-                        <img src="img/2.gif" alt="">
-                        <div class="hover-galeria">
-                            <img src="img/icono1.png" alt="">
-                            <p>Explora nuestras colecciones</p>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </section>
-        <section class="clientes contenedor">
-            <h2 class="titulo">Que dicen nuestros clientes</h2>
-            <div class="cards">
-                <div class="card">
-                    <img src="img/face1.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Juana</h4>
-                        <p>La biblioteca virtual es increíble.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/face2.jpg" alt="">
-                    <div class="contenido-texto-card">
-                        <h4>Karla</h4>
-                        <p>Me encanta la biblioteca virtual, siempre encuentro lo que busco</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="about-services">
-            <div class="contenedor">
-                <h2 class="titulo">Nuestros servicios</h2>
-                <div class="servicio-cont">
-                    <div class="servicio-ind">
-                <img src="img/ilustracion1.svg" alt="">
-                <h3>Acceso a libros digitales</h3>
-                <p>Explora nuestra amplia colección de libros digitales y accede a ellos desde cualquier lugar y en cualquier momento.</p>
-            </div>
-            <div class="servicio-ind">
-                <img src="img/ilustracion4.svg" alt="">
-                <h3>Buscador avanzado</h3>
-                <p>Utiliza nuestro buscador avanzado para encontrar rápidamente los libros que te interesan por autor, título o tema.</p>
-            </div>
-            <div class="servicio-ind">
-                <img src="img/ilustracion3.svg" alt="">
-                <h3>Lectura sin conexión</h3>
-                <p>Descarga libros para leer sin conexión a internet y disfruta de la lectura en cualquier momento, incluso sin conexión.</p>
-            </div>
-                </div>
-            </div>
-        </section>
-    </main>
-    <footer>
-        <div class="contenedor-footer">
-            <div class="content-foo">
-                <h4>Celular</h4>
-                <p>8296312</p>
-            </div>
-            <div class="content-foo">
-                <h4>Correo</h4>
-                <p>8296312</p>
-            </div>
-            <div class="content-foo">
-                <h4>Correo</h4>
-                <p>8296312</p>
-            </div>
-        </div>
-        <h2 class="titulo-final">&copy; Camilo | Omar</h2>
-    </footer>
 
-    <!-- JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+    <!-- Moto Showcase -->
+    <div class="container">
+
+    <section class="products mb-4">
+			<!-- Producto 1 -->
+			<div class="product" style="background-color: #5DC8EB; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+				<img src="http://iamabiker.com/wp-content/uploads/2014/10/2015-yamaha-yzf-r3-05.jpg"
+					alt="Producto 1">
+				<h3 style="color: white;">Yamaha-YZF-R3</h3>
+				<p style="color: white;">Motocicleta deportiva de tamaño medio que ofrece un equilibrio entre rendimiento, manejo y estilo, lo que la convierte en una opción atractiva para una amplia gama de motoristas.
+				</p>
+				<a class="btn btn-light" style="color: black; font-family: 'Roboto Slab', serif;" target="_blank"
+						href="https://www.incolmotos-yamaha.com.co/la-r3-finalmente-esta-aqui/585/">Conoce más de este moto</a>
+			</div>
+			<div class="product" style="background-color: #FF9321; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+				<img src="https://www.totalmotorcycle.com/wp-content/uploads/2017/01/2017-Honda-CBR500R1.jpg"
+					alt="Producto 1">
+				<h3 style="color: white;">Honda-CBR500R</h3>
+				<p style="color: white;">Honda CBR500R es una motocicleta deportiva de tamaño medio que ofrece un equilibrio entre rendimiento, comodidad y estilo, lo que la convierte en una opción atractiva para aquellos que buscan una moto versátil y emocionante.
+				</p>
+				<a  class="btn btn-light" style="color: black; font-family: 'Roboto Slab', serif;" target="_blank"
+						href="https://www.honda.es/motorcycles/range/super-sport/cbr500r/overview.html">Conoce más de este motor</a>
+			</div>
+			<div class="product" style="background-color: #15A63A; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+				<img src="https://www.motoo.com.br/fotos/2018/8/1280_960/kawasaki_ninja-400_2019_1_15082018_2140_1280_960.jpg"
+					alt="Producto 1">
+				<h3 style="color: white;">Kawasaki Ninja 400</h3>
+				<p style="color: white;"c>Kawasaki Ninja 400 es una motocicleta deportiva de tamaño medio que ofrece un rendimiento emocionante, un manejo ágil y un diseño atractivo, lo que la convierte en una opción atractiva para una amplia gama de motoristas.
+				</p>
+				<a class="btn btn-light" style="color: black; font-family: 'Roboto Slab', serif;" target="_blank"
+						href="https://www.autecomobility.com/moto-kawasaki-ninja-400-krt/p">Conoce más de este moto</a>
+			</div>
+		</section>
+    <section class="race-news mb-4">
+    <!-- Noticia 1 -->
+    <div class="news" style="background-color: #4CAF50; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+        <img src="https://cadenaser00.epimg.net/ser/imagenes/2019/04/08/radio_jerez/1554738018_768008_1554738157_noticia_normal_recorte2.jpg" alt="Noticia 1">
+        <h3 style="color: white;">Gran Premio de MotoGP</h3>
+        <p style="color: white;">El Gran Premio de MotoGP de este fin de semana fue emocionante con una carrera llena de adrenalina y un final inesperado.</p>
+        <a class="btn btn-light" style="color: black; font-family: 'Roboto Slab', serif;" target="_blank" href="https://www.motogp.com/es/">Conoce más de este Torneo</a>
+    </div>
+    <!-- Noticia 2 -->
+    <div class="news" style="background-color: #E91E63; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+        <img src="https://photos.worldsbk.com/2024/05/31/_MISANO_TEST_DAY_02-44.jpg" alt="Noticia 2">
+        <h3 style="color: white;">Superbike World Championship</h3>
+        <p style="color: white;">El campeonato mundial de Superbike continúa con sorpresas y giros inesperados en cada carrera, manteniendo a los fanáticos al borde de sus asientos.</p>
+        <a class="btn btn-light" style="color: black; font-family: 'Roboto Slab', serif;" target="_blank" href="https://www.worldsbk.com/">Conoce más de este Torneo</a>
+    </div>
+    <!-- Noticia 3 -->
+    <div class="news" style="background-color: #FF9800; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+        <img src="https://edon2-16fc6.kxcdn.com/wp-content/uploads/sites/15/2022/10/epress_20221013155949.jpg" alt="Noticia 3">
+        <h3 style="color: white;">Campeonato de Motocross</h3>
+        <p style="color: white;">El campeonato de motocross de este año ha visto a nuevos talentos emergentes, con carreras llenas de barro, saltos y velocidad.</p>
+        <a class="btn btn-light" style="color: black; font-family: 'Roboto Slab', serif;" target="_blank" href="https://fim-latinamerica.com/w/">Conoce más de este Torneo</a>
+    </div>
+</section>
+    <section class="race-videos mb-4">
+    
+    <div class="gif-container" style="background-color: #E91E63; box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);">
+        <img src="https://media1.giphy.com/media/oUiZz4CYMcwvqaTa6n/giphy.webp?cid=ecf05e47ui8o8jt8akq6zdneuxcfh8jfwm1x5ra8f45an82w&ep=v1_gifs_search&rid=giphy.webp&ct=g" alt="Superbike GIF" style="width: 100%; border-radius: 10px;">
+        <h3 style="color: white; text-align: center;">Superbike Thrills GIF</h3>
+    </div>
+</section>
+    
+			   <!-- Footer -->
+			   <footer class="footer">
+			       <div class="container">
+			           <p class="text-center">&copy; 2024 Venta de Motos. Todos los derechos reservados.</p>
+			       </div>
+			   </footer>
+			
+			   <!-- JS and dependencies -->
+			   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+			   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+			   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			</body>
+			
+			</html>
+
+

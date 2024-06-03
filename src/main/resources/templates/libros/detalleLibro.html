@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles de la Moto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .libro-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .libro-card {
+            display: flex;
+            align-items: flex-start;
+        }
+        .libro-card img {
+            border-radius: 10px;
+            height: 400px;
+            width: 260px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .libro-details {
+            flex: 1;
+        }
+        .libro-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .libro-author {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .libro-description {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .libro-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .libro-table th, .libro-table td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        .libro-table th {
+            background-color: #f7f7f7;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .btn-cart {
+            background-color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="libro-container">
+    <div class="libro-card">
+        <img th:src="${libro.imagenUrl}" src="https://via.placeholder.com/260x400" alt="Imagen del libro">
+        <div class="libro-details">
+            <div class="libro-title" th:text="${libro.titulo}">Fieras familiares</div>
+            <div class="libro-author" th:text="${libro.autor}">Andrés Cota Hiriart</div>
+            <div class="libro-description" th:text="${libro.descripcion}">
+                ¿Qué debes hacer si una serpiente pitón intenta morderte? ¿Y si te encuentras con un cocodrilo en tu salón? En Fieras familiares, el zoólogo y escritor Andrés Cota Hiriart relata sus vivencias con los insólitos animales que le han acompañado a lo largo de su vida...
+            </div>
+            <table class="libro-table">
+                <tr>
+                    <th>Año</th>
+                    <td th:text="${libro.genero}"></td>
+                </tr>
+                <tr>
+                    <th>Color</th>
+                    <td th:text="${libro.editorial}"></td>
+                </tr>
+                <tr>
+                    <th>Kilometraje</th>
+                    <td th:text="${libro.anoPublicacion}"></td>
+                </tr>
+                <tr>
+                    <th>Usada</th>
+                    <td th:text="${libro.isbn}"></td>
+                </tr>
+                <tr>
+                    <th>Reparada</th>
+                    <td th:text="${libro.presentacion}"></td>
+                </tr>
+                <tr>
+                    <th>Precio</th>
+                    <td th:text="${libro.numeroPaginas}"></td>
+                </tr>
+            </table>
+            <form action="#" th:action="@{/cart/add/{id}(id=${libro.id})}" method="post">
+                <button type="submit" class="btn btn-cart">Agregar al Carro</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

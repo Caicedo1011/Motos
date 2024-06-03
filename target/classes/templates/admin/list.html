@@ -7,21 +7,26 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://images.unsplash.com/photo-1558981404-5f763f8d5c8b') no-repeat center center;
+            background-size: cover;
+            color: #333;
         }
         .container {
             display: flex;
             flex-direction: column;
             height: 100vh;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #fff;
             padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            border-radius: 10px;
         }
         .header h1 {
             margin: 0;
@@ -29,20 +34,22 @@
         }
         .header .logout {
             text-decoration: none;
-            color: #000;
+            color: #fff;
             font-size: 16px;
         }
         .main {
             display: flex;
             flex: 1;
+            margin-top: 20px;
         }
         .sidebar {
-            background-color: #333;
-            width: 200px;
+            background-color: #444;
+            width: 220px;
             color: #fff;
             display: flex;
             flex-direction: column;
-            padding-top: 40px;
+            padding-top: 10px;
+            border-radius: 10px;
         }
         .sidebar ul {
             list-style: none;
@@ -60,40 +67,41 @@
             font-size: 16px;
             display: flex;
             align-items: center;
+            justify-content: center;
         }
         .sidebar ul li a img {
             margin-right: 10px;
             max-width: 24px;
         }
         .sidebar ul li:hover {
-            background-color: #555;
+            background-color: #666;
         }
         .content {
             flex: 1;
-            background-color: #e0e0e0;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            margin-left: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-       .section {
-    width: 100%;
-    max-width: 950px;
-    margin-bottom: 20px;
-    background-color: #fff; /* Aplica el fondo blanco a la sección */
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
+        .section {
+            width: 100%;
+            max-width: 950px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
         .section h2 {
             font-size: 20px;
             margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        .section h2 img {
+            margin-right: 10px;
+            max-width: 28px;
         }
         .section table {
             width: 100%;
@@ -103,10 +111,10 @@
             border: 1px solid #ddd;
             padding: 12px;
             text-align: left;
-            word-wrap: break-word; /* Permite dividir palabras largas */
-            max-width: 200px; /* Ejemplo de ancho máximo ajustable */
-            overflow: hidden; /* Controla el desbordamiento */
-            text-overflow: ellipsis; /* Añade puntos suspensivos en caso de desbordamiento */
+            word-wrap: break-word;
+            max-width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
         .section th {
             background-color: #f2f2f2;
@@ -120,7 +128,7 @@
         .section td a {
             text-decoration: none;
             margin-right: 10px;
-            color: blue;
+            color: #007bff;
         }
         .section td a:hover {
             text-decoration: underline;
@@ -131,7 +139,7 @@
         .create-link {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #b10000;
+            background-color: #ff6600;
             color: #fff;
             text-decoration: none;
             border-radius: 4px;
@@ -139,7 +147,7 @@
             width: fit-content;
         }
         .create-link:hover {
-            background-color: #0056b3;
+            background-color: #cc5200;
         }
         .action-button {
             padding: 8px 16px;
@@ -168,17 +176,17 @@
         <div class="main">
             <nav class="sidebar">
                 <ul>
-                    <li><a th:href="@{/admin/list}"><img src="https://cdn-icons-png.flaticon.com/512/949/949662.png" alt=""> Lista de Administradores</a></li>
-                    <li><a th:href="@{/usuarios/}"><img src="https://cdn-icons-png.flaticon.com/512/949/949662.png" alt=""> Lista de Usuarios</a></li>
+                    <li><a th:href="@{/admin/list}"><img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Administradores"> Administradores</a></li>
+                    <li><a th:href="@{/usuarios/}"><img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Usuarios"> Usuarios</a></li>
+                    <li><a th:href="@{/libros}"><img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Motos"> Motos</a></li>
                 </ul>
             </nav>
             <section class="content">
                 <div class="section">
-                    <h2>Lista de Administradores</h2>
+                    <h2><img src="https://cdn-icons-png.flaticon.com/512/929/929426.png" alt="Lista"> Lista de Administradores</h2>
                     <table>
                         <thead>
                             <tr>
-                                
                                 <th>Nombres</th>
                                 <th>Apellidos</th>
                                 <th>Celular</th>
@@ -192,7 +200,6 @@
                         <tbody>
                             <!-- Iteración sobre la lista de administradores -->
                             <tr th:each="admin : ${admins}">
-                                
                                 <td th:text="${admin.nombres}"></td>
                                 <td th:text="${admin.apellidos}"></td>
                                 <td th:text="${admin.celular}"></td>

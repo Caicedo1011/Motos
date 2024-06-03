@@ -1,10 +1,13 @@
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\controller\UsuarioController.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\entity\Usuario.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\repository\UsuarioRepository.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\LibreriaVirtualApplication.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\controller\AdminController.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\controller\AdminLoginController.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\entity\Administrador.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\controller\LoginTemplateController.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\controller\HomeController.java
-C:\Users\Usuario\Documents\camiloSprint\LibreriaVirtual\src\main\java\com\libreria\repository\AdministradorRepository.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\controller\AdminController.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\controller\AdminLoginController.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\controller\HomeController.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\controller\LoginTemplateController.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\controller\motosController.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\controller\UsuarioController.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\entity\Administrador.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\entity\Libro.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\entity\Usuario.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\MotosApplication.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\repository\AdministradorRepository.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\repository\LibroRepository.java
+D:\Spring Trabajos\Motos\src\main\java\com\motos\repository\UsuarioRepository.java

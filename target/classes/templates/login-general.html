@@ -2,126 +2,107 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login de Usuario - Librería Nacional</title>
+    <title>Login de Usuario - Venta de Motos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
+            background-color: #f8f9fa;
             display: flex;
+            justify-content: center;
+            align-items: center;
             height: 100vh;
+            font-family: 'Arial', sans-serif;
         }
         .container {
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             display: flex;
-            flex: 1;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
         }
         .left {
-            background-color: #002d72;
-            color: white;
-            padding: 50px;
-            width: 50%;
-            box-sizing: border-box;
+            background: url('			https://www.carlsen.de/sites/default/files/serie/cover/motomania.jpg') no-repeat center center/cover;
+            flex: 1;
+            color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             text-align: center;
-        }
-        .left h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .left p {
-            margin-bottom: 20px;
-            font-size: 16px;
+            padding: 30px;
         }
         .left img {
-            width: 150px; /* Aumentar el tamaño del logo */
+            max-width: 100px;
             margin-bottom: 20px;
         }
-        .left .social-icons {
-            margin-top: 20px;
+        .left h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
         }
-        .left .social-icons a {
-            margin: 0 10px;
+        .left p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
-        .left .social-icons img {
-            width: 30px;
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+			margin-top: 300px;
+        }
+        .social-icons a img {
+            width: 40px;
+            height: 40px;
         }
         .right {
-            background-color: white;
-            padding: 50px;
-            width: 50%;
-            box-sizing: border-box;
+            flex: 1;
+            padding: 30px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
-            position: relative;
         }
         .back-link {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 16px;
+            margin-bottom: 20px;
         }
         .back-link a {
-            color: #002d72;
+            color: #007bff;
             text-decoration: none;
         }
         .back-link a:hover {
             text-decoration: underline;
         }
-        .right h2 {
+        h2 {
             margin-bottom: 20px;
-            font-size: 24px;
         }
-        .right form {
+        form {
             display: flex;
             flex-direction: column;
-            max-width: 400px;
-            width: 100%;
-            margin: 0 auto;
         }
-        .right form input {
-            margin-bottom: 20px;
+        form input {
+            margin-bottom: 15px;
             padding: 10px;
-            font-size: 16px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            max-width: 100%;
+            border-radius: 4px;
         }
-        .right form button {
+        form button {
             padding: 10px;
-            background-color: #c70000;
-            color: white;
-            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
             border: none;
-            border-radius: 5px;
+            border-radius: 4px;
             cursor: pointer;
         }
-        .right form button:hover {
-            background-color: #a50000;
+        form button:hover {
+            background-color: #0056b3;
         }
-        .right .register-link {
-            margin-top: 15px;
+        .register-link {
+            margin-top: 20px;
         }
-        .right .register-link a {
-            color: #002d72;
+        .register-link a {
+            color: #007bff;
             text-decoration: none;
         }
-        .right .register-link a:hover {
-            text-decoration: underline;
-        }
-        .right .forgot-password {
-            margin-top: 10px;
-            font-size: 14px;
-        }
-        .right .forgot-password a {
-            color: #002d72;
-            text-decoration: none;
-        }
-        .right .forgot-password a:hover {
+        .register-link a:hover {
             text-decoration: underline;
         }
     </style>
@@ -129,18 +110,14 @@
 <body>
     <div class="container">
         <div class="left">
-            <img src="./img/111.png" alt="Logo">
-            <h1>¡Más de 200.000 títulos!</h1>
-            <p>Ahora puedes ver tus libros por internet desde la comodidad de tu casa o oficina a través de nuestra Biblioteca Virtual.</p>
+            
             <div class="social-icons">
-                <a href="https://www.facebook.com" target="_blank">
-                    <img src="./img/face.png" alt="Facebook">
+				<a class="nav-link" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    
                 </a>
-                <a href="https://www.instagram.com" target="_blank">
-                    <img src="./img/insta.png" alt="Instagram">
+				<a class="nav-link" href="https://x.com/?lang=es" target="_blank"><i class="fab fa-twitter"></i></a>
                 </a>
-                <a href="https://www.twitter.com" target="_blank">
-                    <img src="./img/x.png" alt="Twitter">
+				<a class="nav-link" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </a>
             </div>
         </div>
@@ -148,7 +125,7 @@
             <div class="back-link">
                 <a th:href="@{/}">← Volver</a>
             </div>
-            <h2>Inicia sesión en Bibliocosmos</h2>
+            <h2>Inicia sesión USUARIO</h2>
             <form th:action="@{/login}" method="post">
                 <input type="email" id="correo" name="correo" placeholder="Correo electrónico" required>
                 <input type="password" id="password" name="password" placeholder="Contraseña" required>
@@ -157,5 +134,10 @@
             <p class="register-link">¿Aún no tienes una cuenta? <a th:href="@{usuarios/registro}">Regístrate</a></p>
         </div>
     </div>
+
+    <!-- JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

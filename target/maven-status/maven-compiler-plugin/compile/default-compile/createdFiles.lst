@@ -1,0 +1,13 @@
+com\motos\controller\LoginTemplateController.class
+com\motos\controller\motosController.class
+com\motos\MotosApplication.class
+com\motos\entity\Administrador.class
+com\motos\controller\AdminLoginController.class
+com\motos\controller\UsuarioController.class
+com\motos\controller\HomeController.class
+com\motos\controller\AdminController.class
+com\motos\repository\LibroRepository.class
+com\motos\repository\UsuarioRepository.class
+com\motos\repository\AdministradorRepository.class
+com\motos\entity\Libro.class
+com\motos\entity\Usuario.class
